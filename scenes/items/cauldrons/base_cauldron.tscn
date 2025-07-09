@@ -1,0 +1,151 @@
+[gd_scene load_steps=16 format=3 uid="uid://ssmytswyf6g2"]
+
+[ext_resource type="Script" uid="uid://y4ecka6m2iun" path="res://scripts/items/base_cauldron.gd" id="1_st1q8"]
+[ext_resource type="Texture2D" uid="uid://cwaf2mn7nyvrx" path="res://assets/materials/base_cauldron_pots.tres" id="1_xe5dt"]
+[ext_resource type="Texture2D" uid="uid://dfrk4lixjx1h7" path="res://assets/textures/green_square_texure.png" id="2_2sofk"]
+[ext_resource type="Texture2D" uid="uid://djhrxl7tnpwrl" path="res://assets/textures/orange_square_texure.png" id="3_c5ltt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5ltt"]
+albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
+albedo_texture = ExtResource("1_xe5dt")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sofk"]
+albedo_color = Color(0.374139, 0.374139, 0.374139, 1)
+albedo_texture = ExtResource("1_xe5dt")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe5dt"]
+albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
+albedo_texture = ExtResource("1_xe5dt")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st1q8"]
+albedo_color = Color(0, 0.884509, 0.231697, 1)
+albedo_texture = ExtResource("2_2sofk")
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 2.0
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lei01"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2sofk"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.25
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 0.0
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lei01"]
+albedo_color = Color(0, 1, 0.227451, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_g825k"]
+material = SubResource("StandardMaterial3D_lei01")
+size = Vector3(0.02, 0.02, 0.02)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2sofk"]
+height = 0.05
+radius = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g825k"]
+albedo_texture = ExtResource("3_c5ltt")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_txfsy"]
+size = Vector3(1.8, 0.01, 0.95)
+
+[node name="BaseCauldron" type="Node3D"]
+script = ExtResource("1_st1q8")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_c5ltt")
+use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
+use_collision = true
+material = SubResource("StandardMaterial3D_2sofk")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+operation = 2
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429289, 0)
+operation = 2
+radius = 0.223633
+height = 0.298828
+sides = 12
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_xe5dt")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37506, 1.19995, 0)
+size = Vector3(2.75012, 3.33815, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.353516, 2.42612, 0)
+radius = 0.437988
+height = 1.70703
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06508, 0)
+radius = 0.6
+height = 1.57002
+sides = 16
+cone = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.2, 0)
+operation = 2
+size = Vector3(1.79602, 1, 1)
+
+[node name="CauldronCore" type="Node3D" parent="."]
+
+[node name="CoreMesh" type="MeshInstance3D" parent="CauldronCore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.780213, 0)
+material_override = SubResource("StandardMaterial3D_st1q8")
+mesh = SubResource("CylinderMesh_lei01")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CauldronCore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04129, 0)
+amount = 60
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_2sofk")
+draw_pass_1 = SubResource("BoxMesh_g825k")
+
+[node name="CoreArea" type="Area3D" parent="CauldronCore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96739, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CauldronCore/CoreArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("CylinderShape3D_2sofk")
+
+[node name="PotionSpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PotionSpawner"]
+material_override = SubResource("StandardMaterial3D_g825k")
+mesh = SubResource("BoxMesh_txfsy")
+
+[node name="Marker3D" type="Marker3D" parent="PotionSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.55)
+text = "0/2"
+
+[connection signal="area_entered" from="CauldronCore/CoreArea" to="." method="_on_core_area_area_entered"]
+[connection signal="body_entered" from="CauldronCore/CoreArea" to="." method="_on_core_area_body_entered"]

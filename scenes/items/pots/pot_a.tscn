@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://7cm80mi5q2hm"]
+
+[ext_resource type="PackedScene" uid="uid://dfedii1fp5cys" path="res://scenes/items/pots/base_pot.tscn" id="1_e6h2x"]
+[ext_resource type="PackedScene" uid="uid://kwg0vvsae0q1" path="res://scenes/items/blooms/bloom_a.tscn" id="2_ga5j6"]
+[ext_resource type="Texture2D" uid="uid://bmxajwsaxc72p" path="res://assets/textures/white_square_texure.png" id="2_ij0xu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga5j6"]
+albedo_color = Color(0, 0.568627, 1, 1)
+albedo_texture = ExtResource("2_ij0xu")
+uv1_triplanar = true
+
+[node name="PotA" instance=ExtResource("1_e6h2x")]
+bloom_scene = ExtResource("2_ga5j6")
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ga5j6")
+
+[node name="Label3D" type="Label3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+text = "A"
+font_size = 72

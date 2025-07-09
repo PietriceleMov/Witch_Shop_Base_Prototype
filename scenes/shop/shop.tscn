@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://btkvq86c522n2"]
+
+[ext_resource type="Texture2D" uid="uid://goiq34qoxq6c" path="res://assets/textures/black_square_texure.png" id="1_100s2"]
+[ext_resource type="PackedScene" uid="uid://dhtxqj4al8f0v" path="res://scenes/player/player.tscn" id="2_qaxay"]
+[ext_resource type="PackedScene" uid="uid://qn47gu1gj1nc" path="res://scenes/items/tables/base_table.tscn" id="4_ctpgp"]
+[ext_resource type="PackedScene" uid="uid://d0dfjksw84sre" path="res://scenes/items/magic_tree.tscn" id="5_ctpgp"]
+[ext_resource type="PackedScene" uid="uid://cg8mhw0x4ljki" path="res://scenes/items/doorway.tscn" id="7_ge4d2"]
+[ext_resource type="PackedScene" uid="uid://beprscpntg45a" path="res://assets_test/reimports/pot_with_clovers_reimport.tscn" id="7_tp26b"]
+[ext_resource type="PackedScene" uid="uid://do3eo2cjda6ia" path="res://scenes/items/cauldrons/multi_potions_cauldron.tscn" id="7_xcdpw"]
+[ext_resource type="PackedScene" uid="uid://c7r004praj51" path="res://scenes/items/vials/vial_a.tscn" id="8_8qn5i"]
+[ext_resource type="PackedScene" uid="uid://bkelebxkq3xvq" path="res://scenes/items/vials/vial_b.tscn" id="9_dww4p"]
+[ext_resource type="PackedScene" uid="uid://d0yv0am535e2e" path="res://scenes/items/vials/vial_c.tscn" id="10_g6lcs"]
+[ext_resource type="PackedScene" uid="uid://dbkfcwga2ktgt" path="res://scenes/items/vials/vial_d.tscn" id="11_131kw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaxay"]
+albedo_texture = ExtResource("1_100s2")
+uv1_triplanar = true
+
+[node name="Shop" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_qaxay")
+use_collision = true
+size = Vector3(20, 1, 20)
+
+[node name="Player" parent="." instance=ExtResource("2_qaxay")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.465, 1, -6.081)
+
+[node name="BaseTable" parent="." instance=ExtResource("4_ctpgp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0.501411, -5)
+
+[node name="BaseTable2" parent="." instance=ExtResource("4_ctpgp")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -8, 0.501411, 1)
+
+[node name="MagicTree" parent="." instance=ExtResource("5_ctpgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="Doorway" parent="." instance=ExtResource("7_ge4d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.525, -10.25)
+
+[node name="MultiPotionsCauldron" parent="." instance=ExtResource("7_xcdpw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.25945, 0.493821, 2)
+
+[node name="pot_with_clovers_reimport" parent="." instance=ExtResource("7_tp26b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00158, 1.54572, 1.02413)
+
+[node name="VialA" parent="." instance=ExtResource("8_8qn5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78668, 1.55127, -4.19793)
+
+[node name="VialA2" parent="." instance=ExtResource("8_8qn5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78291, 1.55127, -4.45975)
+
+[node name="VialB" parent="." instance=ExtResource("9_dww4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.77384, 1.55127, -4.72828)
+
+[node name="VialB2" parent="." instance=ExtResource("9_dww4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7641, 1.55127, -4.9997)
+
+[node name="VialC" parent="." instance=ExtResource("10_g6lcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.74939, 1.55127, -5.28685)
+
+[node name="VialC2" parent="." instance=ExtResource("10_g6lcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75336, 1.55127, -5.56248)
+
+[node name="VialD" parent="." instance=ExtResource("11_131kw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72797, 1.55127, -5.86015)
+
+[node name="VialD2" parent="." instance=ExtResource("11_131kw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.02506, 1.55224, -5.86203)

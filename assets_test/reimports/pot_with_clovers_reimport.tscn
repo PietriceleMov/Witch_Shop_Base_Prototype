@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=4 uid="uid://beprscpntg45a"]
+
+[ext_resource type="PackedScene" uid="uid://cb7gvi8xphbsp" path="res://assets_test/pot_with_clovers.glb" id="1_vhi5w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hlkjx"]
+load_path = "res://.godot/imported/pot_with_clovers_Stylized_Clover_Ground_basecolor.jpg-32d0d49e0a29237b04a4fd6e2ade8bd8.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y2xua"]
+load_path = "res://.godot/imported/pot_with_clovers_Stylized_Clover_Ground_roughness.png-371d5c2660b033c42a0c6c28e81c704a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8kebg"]
+load_path = "res://.godot/imported/pot_with_clovers_Stylized_Clover_Ground_normalogl.jpg-5db3aa30817adfa34920657687694c6c.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npjf4"]
+load_path = "res://.godot/imported/pot_with_clovers_Stylized_Clover_Ground_roughness.png-371d5c2660b033c42a0c6c28e81c704a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uugnr"]
+resource_name = "Stylized Clover Ground"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_hlkjx")
+metallic_texture = SubResource("CompressedTexture2D_y2xua")
+metallic_texture_channel = 2
+roughness_texture = SubResource("CompressedTexture2D_npjf4")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_8kebg")
+uv1_triplanar = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_foo6g"]
+_surfaces = [{
+"aabb": AABB(-0.286128, -0.0105196, -0.282259, 0.569161, 0.0196863, 0.569161),
+"format": 34359742465,
+"index_count": 228,
+"index_data": PackedByteArray("IAABAAIAIAAAAAEABQAAACAABQAGAAAAIQAgAAIAIgAFACAAIgAgACEABwAFACIABwAIAAUAIQACACMAIwACAAQAIwAEAAMAJAAhACMAJQAiACEAJQAhACQAJgAHACIAJgAiACUACQAKAAcACQAHACYAJgALAAkAJgAVAAsAFQAmACcAJwAUABUAJwAWABQAKAAnACYAKAAmACUAFgAnACkAKQAYABYAKQAXABgAKgApACcAKgAXACkAKgAnACgAKgArABcAKwAbABcAKwAaABsALAArACoALAAqACgALQAaACsALAAtACsALQAuABoALgAZABoALgAeABkAHAAeAC4AHAAfAB4ALwAuAC0ALwAcAC4AMAAtACwAMAAvAC0ALAAoADEAMAAsADEAMQAoACUAMQAlACQAEgAcAC8AEgAdABwAMgAvADAAMgASAC8AMAAxADMAMwAxACQAMgAwADMAEAASADIAEAATABIADwAQADIAEAAPABEADwAyADQAMgAzADQANAANAA8AMwAkADUANAAzADUAJAAjADUANQAjAAMANAA1ADYADQA0ADYANQADADYADQA2AA4ANgADAAwANgAMAA4A"),
+"lods": [0.0182775, PackedByteArray("AAABAAIAAwAAAAIAAwACAAQABQAGAAAABwAFAAAABwAAAAMABwAIAAUACQAKAAcACQAHAAsACwAHAAMACwADAAwADQAMAA4ADQAPAAwADwALAAwAEAAPABEADwAQABIAEgALAA8AEAATABIACwAUABUACwAWABQAFwAWAAsAEgAXAAsAFgAXABgAEgAZABcAFwAZABoAFwAaABsAEgAcABkAEgAdABwAHAAeABkAHAAfAB4A")],
+"name": "Stylized Clover Ground",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 55,
+"vertex_data": PackedByteArray("tumQPlxaLLz5HRg7/hyOPlAWQLvk5Vm9YNKFPlAWQLs7SNq9SXlMPlAWQLtvrku+4bZwPlAWQLunhR++YNKFPlxaLLwbyuM9/hyOPlxaLLyk6Ww9SXlMPlAWQLtfb1A+4bZwPlAWQLuXRiQ+6t3bPbAc0DtszYc+gVAgPlAWQLv4rHQ+RBFdPbAc0DsJGJA+gVAgPlAWQLsI7G++RBFdPYBntjqRt42+6t3bPYBntjr0bIW+kM/KuoBntjpJhJC+ZjTivVAWQLv0bIW+PL5pvVAWQLuRt42+h6RPvlAWQLtvrku+v3sjvlAWQLsI7G++PL5pvVAWQLsJGJA+kM/KurAc0DvB5JI+ZjTivVAWQLtszYc+h6RPvigv2jtfb1A+v3sjvlAWQLv4rHQ+nbKPvlAWQLuk6Ww9AGiHvlAWQLsbyuM9H+JzvlAWQLuXRiQ+AGiHvuQvFjw7SNq9H+JzvlAWQLunhR++VX+SvlAWQLv5HRg7nbKPvlAWQLvk5Vm9YNKFPlxaLLzzHRg7SXlMPlAWQLvzHRg7SXlMPlAWQLsbyuM9SXlMPlAWQLs7SNq96t3bPUj1CTzzHRg76t3bPVAWQLsbyuM96t3bPbAc0Dtfb1A+kM/KurAc0Dtfb1A+kM/KuniiprscyuM9ZjTivSgv2jtfb1A+ZjTivdiXkzscyuM9h6RPvigv2jsbyuM9ZjTivXiiprvzHRg7h6RPvuQvFjzzHRg7AGiHvuQvFjzzHRg7h6RPvuQvFjw7SNq9ZjTivVAWQLs7SNq9kM/KukBTzTvzHRg7ZjTivVAWQLtvrku+kM/Kukj1CTw8SNq9kM/KuoBntjpvrku+6t3bPUj1CTw8SNq96t3bPYBntjpvrku+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c65mi"]
+resource_name = "pot_with_clovers_Circle_008"
+_surfaces = [{
+"aabb": AABB(-0.286128, -0.0105196, -0.282259, 0.569161, 0.0196863, 0.569161),
+"attribute_data": PackedByteArray("AAAAAAAAgD9D2kg/AAAAPwAAAAAAAIA/53NHPwiT4z4AAAAAAACAP5hOQz+2Pcg+AAAAAAAAgD+6gzM/jPiYPgAAAAAAAIA/IJM8P/AMrz4AAAAAAACAP5hOQz8m4Rs/AAAAAAAAgD/nc0c/fDYOPwAAAAAAAIA/uoMzP7qDMz8AAAAAAACAPyCTPD+IeSg/AAAAAAAAgD8l4Rs/mE5DPwAAAAAAAIA/iHkoPyCTPD8AAAAAAACAP3w2Dj/mc0c/AAAAAAAAgD+IeSg/wNmGPgAAAAAAAIA/fDYOP2gwYj4AAAAAAACAPyXhGz+gxXI+AAAAAAAAgD8AAAA/+JZcPgAAAAAAAIA/tj3IPqDFcj4AAAAAAACAPwiT4z5oMGI+AAAAAAAAgD+M+Jg+jPiYPgAAAAAAAIA/8AyvPsDZhj4AAAAAAACAPwiT4z7mc0c/AAAAAAAAgD8AAAA/QtpIPwAAAAAAAIA/tj3IPphOQz8AAAAAAACAP4z4mD66gzM/AAAAAAAAgD/wDK8+IJM8PwAAAAAAAIA/ZjBiPnw2Dj8AAAAAAACAP6DFcj4m4Rs/AAAAAAAAgD/A2YY+iHkoPwAAAAAAAIA/oMVyPrY9yD4AAAAAAACAP8DZhj7wDK8+AAAAAAAAgD/2llw+AAAAPwAAAAAAAIA/ZjBiPgiT4z4AAAAAAACAP5hOQz8AAAA/AAAAAAAAgD+6gzM/AAAAPwAAAAAAAIA/uoMzPybhGz8AAAAAAACAP7qDMz+2Pcg+AAAAAAAAgD8l4Rs/AAAAPwAAAAAAAIA/JeEbPybhGz8AAAAAAACAPyXhGz+6gzM/AAAAAAAAgD8AAAA/uoMzPwAAAAAAAIA/AAAAPybhGz8AAAAAAACAP7Y9yD66gzM/AAAAAAAAgD+2Pcg+JuEbPwAAAAAAAIA/jPiYPibhGz8AAAAAAACAP7Y9yD4AAAA/AAAAAAAAgD+M+Jg+AAAAPwAAAAAAAIA/oMVyPgAAAD8AAAAAAACAP6DFcj62Pcg+AAAAAAAAgD+M+Jg+tj3IPgAAAAAAAIA/tj3IPrY9yD4AAAAAAACAPwAAAD8AAAA/AAAAAAAAgD+2Pcg+jPiYPgAAAAAAAIA/AAAAP7Q9yD4AAAAAAACAPwAAAD+M+Jg+AAAAAAAAgD8l4Rs/tD3IPgAAAAAAAIA/JeEbP4z4mD4="),
+"format": 34359742519,
+"index_count": 228,
+"index_data": PackedByteArray("IAABAAIAIAAAAAEABQAAACAABQAGAAAAIQAgAAIAIgAFACAAIgAgACEABwAFACIABwAIAAUAIQACACMAIwACAAQAIwAEAAMAJAAhACMAJQAiACEAJQAhACQAJgAHACIAJgAiACUACQAKAAcACQAHACYAJgALAAkAJgAVAAsAFQAmACcAJwAUABUAJwAWABQAKAAnACYAKAAmACUAFgAnACkAKQAYABYAKQAXABgAKgApACcAKgAXACkAKgAnACgAKgArABcAKwAbABcAKwAaABsALAArACoALAAqACgALQAaACsALAAtACsALQAuABoALgAZABoALgAeABkALwAeAC4ALwAfAB4AMAAuAC0AMAAcAC4AMQAtACwAMQAwAC0ALAAoADIAMQAsADIAMgAoACUAMgAlACQAEgAcADAAEgAdABwAMwAwADEAMwASADAAMQAyADQANAAyACQAMwAxADQAEAASADMAEAATABIADwAQADMAEAAPABEADwAzADUAMwA0ADUANQANAA8ANAAkADYANQA0ADYAJAAjADYANgAjAAMANQA2ADcADQA1ADcANgADADcADQA3AA4ANwADAAwANwAMAA4A"),
+"lods": [0.0182775, PackedByteArray("AAABAAIAAwAAAAIAAwACAAQABQAGAAAABwAFAAAABwAAAAMABwAIAAUACQAKAAcACQAHAAsACwAHAAMACwADAAwADQAMAA4ADQAPAAwADwALAAwAEAAPABEADwAQABIAEgALAA8AEAATABIACwAUABUACwAWABQAFwAWAAsAEgAXAAsAFgAXABgAEgAZABcAFwAZABoAFwAaABsAEgAcABkAEgAdABwAHAAeABkAHAAfAB4A")],
+"material": SubResource("StandardMaterial3D_uugnr"),
+"name": "Stylized Clover Ground",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("tumQPlxaLLz5HRg7/hyOPlAWQLvk5Vm9YNKFPlAWQLs7SNq9SXlMPlAWQLtvrku+4bZwPlAWQLunhR++YNKFPlxaLLwbyuM9/hyOPlxaLLyk6Ww9SXlMPlAWQLtfb1A+4bZwPlAWQLuXRiQ+6t3bPbAc0DtszYc+gVAgPlAWQLv4rHQ+RBFdPbAc0DsJGJA+gVAgPlAWQLsI7G++RBFdPYBntjqRt42+6t3bPYBntjr0bIW+kM/KuoBntjpJhJC+ZjTivVAWQLv0bIW+PL5pvVAWQLuRt42+h6RPvlAWQLtvrku+v3sjvlAWQLsI7G++PL5pvVAWQLsJGJA+kM/KurAc0DvB5JI+ZjTivVAWQLtszYc+h6RPvigv2jtfb1A+v3sjvlAWQLv4rHQ+nbKPvlAWQLuk6Ww9AGiHvlAWQLsbyuM9H+JzvlAWQLuXRiQ+AGiHvuQvFjw7SNq9H+JzvlAWQLunhR++VX+SvlAWQLv5HRg7nbKPvlAWQLvk5Vm9YNKFPlxaLLzzHRg7SXlMPlAWQLvzHRg7SXlMPlAWQLsbyuM9SXlMPlAWQLs7SNq96t3bPUj1CTzzHRg76t3bPVAWQLsbyuM96t3bPbAc0Dtfb1A+kM/KurAc0Dtfb1A+kM/KuniiprscyuM9ZjTivSgv2jtfb1A+ZjTivdiXkzscyuM9h6RPvigv2jsbyuM9ZjTivXiiprvzHRg7h6RPvuQvFjzzHRg7AGiHvuQvFjzzHRg7AGiHvuQvFjw7SNq9h6RPvuQvFjw7SNq9ZjTivVAWQLs7SNq9kM/KukBTzTvzHRg7ZjTivVAWQLtvrku+kM/Kukj1CTw8SNq9kM/KuoBntjpvrku+6t3bPUj1CTw8SNq96t3bPYBntjpvrku+So3HB////784mCwO////vzl6TwL///+/2nhXCv///z//fwAA////v9x18Qv///8//38AAP///79adzUL////Px151Qv///8/Anc4Bv///78XaiwP////v/9/AAD///+/OXg6C////z//fwAA////v/p8WgT///8/o4KCA////z9Sg2wE////PyOF2gb///8/Kn7/Cv///z//fwAA////v5qQJgb///+/3IhHA////788lFkF////v1yMLgb///+/CJoUBP///795rBgl////v2aXMxH///+/CJrzFf///7/dg5MM////P1iIJBv///8/YK+DLP///7+0smM0////P356fgH///+/5XKYCv///79Ud+AJ////P/B3Jwj///8/g3aRBP///79ufcEC////P4l6bQj///8/m4B5A////z/Cf4gC////P76HHgH///+/2Ht0B////z+Rh7AF////vyh8qgP///+/+nmpBP///79VngQb////v7SyYzT///8/S3y9Cv///z8Gf0cD////P3iIPAT///+/goEgBf///z+OhRcI////P3ODUQf///8/IXr3CP///z98e8wI////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_foo6g")
+
+[node name="pot_with_clovers_reimport" instance=ExtResource("1_vhi5w")]
+
+[node name="Grass Clovers_001" parent="Round circle-edged pot_001" index="62"]
+mesh = SubResource("ArrayMesh_c65mi")

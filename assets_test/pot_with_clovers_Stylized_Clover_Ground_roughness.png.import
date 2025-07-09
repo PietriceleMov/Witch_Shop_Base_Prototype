@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cgi3flo74bp0a"
+path.s3tc="res://.godot/imported/pot_with_clovers_Stylized_Clover_Ground_roughness.png-371d5c2660b033c42a0c6c28e81c704a.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "de64fc86794e885a3fe47ccac487397a"
+}
+
+[deps]
+
+source_file="res://assets_test/pot_with_clovers_Stylized_Clover_Ground_roughness.png"
+dest_files=["res://.godot/imported/pot_with_clovers_Stylized_Clover_Ground_roughness.png-371d5c2660b033c42a0c6c28e81c704a.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

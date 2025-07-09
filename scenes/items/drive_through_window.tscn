@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmc7rbx3fo1h2"]
+
+[ext_resource type="Script" uid="uid://dh3jrv6h8it0m" path="res://scripts/items/drive_through_window.gd" id="1_7bhhy"]
+[ext_resource type="Texture2D" uid="uid://djhrxl7tnpwrl" path="res://assets/textures/orange_square_texure.png" id="1_b1n4m"]
+[ext_resource type="Texture2D" uid="uid://dfrk4lixjx1h7" path="res://assets/textures/green_square_texure.png" id="1_xcenn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1n4m"]
+albedo_texture = ExtResource("1_xcenn")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcenn"]
+albedo_texture = ExtResource("1_xcenn")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bhhy"]
+albedo_texture = ExtResource("1_b1n4m")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_u2bg6"]
+size = Vector3(3.5, 0.01, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcenn"]
+size = Vector3(3.5, 0.01, 0.8)
+
+[node name="DriveThroughWindow" type="Node3D"]
+script = ExtResource("1_7bhhy")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(4, 2.5, 1)
+material = SubResource("StandardMaterial3D_b1n4m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+operation = 2
+size = Vector3(3.5, 2, 1)
+material = SubResource("StandardMaterial3D_xcenn")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+text = "2 customers left"
+font_size = 100
+
+[node name="PotionsCounter" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.999871, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PotionsCounter"]
+material_override = SubResource("StandardMaterial3D_7bhhy")
+mesh = SubResource("BoxMesh_u2bg6")
+
+[node name="Countertop" type="Area3D" parent="PotionsCounter"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PotionsCounter/Countertop"]
+shape = SubResource("BoxShape3D_xcenn")
+
+[node name="CustomerSpawner" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -1, -1.5)
+
+[connection signal="area_entered" from="PotionsCounter/Countertop" to="." method="_on_countertop_area_entered"]

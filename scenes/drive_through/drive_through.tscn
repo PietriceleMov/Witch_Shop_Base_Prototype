@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dun7rg8y6sedt"]
+
+[ext_resource type="Texture2D" uid="uid://17t4qe6hv4g2" path="res://assets/textures/red_square_texure.png" id="1_cvkyp"]
+[ext_resource type="PackedScene" uid="uid://cmc7rbx3fo1h2" path="res://scenes/items/drive_through_window.tscn" id="2_tjlul"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjlul"]
+albedo_color = Color(0.29219, 0.29219, 0.29219, 1)
+albedo_texture = ExtResource("1_cvkyp")
+uv1_triplanar = true
+
+[node name="DriveThrough" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(20, 1, 6)
+material = SubResource("StandardMaterial3D_tjlul")
+
+[node name="DriveThroughWindow" parent="." instance=ExtResource("2_tjlul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.7, 3)

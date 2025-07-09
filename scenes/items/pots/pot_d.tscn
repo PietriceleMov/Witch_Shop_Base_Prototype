@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://4pj5q3dx4qh4"]
+
+[ext_resource type="PackedScene" uid="uid://dfedii1fp5cys" path="res://scenes/items/pots/base_pot.tscn" id="1_lg8bw"]
+[ext_resource type="Texture2D" uid="uid://bmxajwsaxc72p" path="res://assets/textures/white_square_texure.png" id="2_40q5q"]
+[ext_resource type="PackedScene" uid="uid://btefojr24n275" path="res://scenes/items/blooms/bloom_d.tscn" id="2_uijr1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uijr1"]
+albedo_color = Color(0.393993, 1, 0.388412, 1)
+albedo_texture = ExtResource("2_40q5q")
+uv1_triplanar = true
+
+[node name="PotD" instance=ExtResource("1_lg8bw")]
+bloom_scene = ExtResource("2_uijr1")
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uijr1")
+
+[node name="Label3D" type="Label3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+text = "D"
+font_size = 72

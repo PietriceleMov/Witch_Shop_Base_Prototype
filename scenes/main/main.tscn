@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfcuaoywnfpv0"]
+
+[ext_resource type="PackedScene" uid="uid://btkvq86c522n2" path="res://scenes/shop/shop.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://80yvjygoivbi" path="res://scripts/main/main.gd" id="1_iuonh"]
+[ext_resource type="PackedScene" uid="uid://b6iep5f7og2ds" path="res://scenes/greenhouse/greenhouse.tscn" id="4_6q06x"]
+[ext_resource type="PackedScene" uid="uid://dun7rg8y6sedt" path="res://scenes/drive_through/drive_through.tscn" id="4_l3cfh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iuonh"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_k2fmo"]
+sky_material = SubResource("ProceduralSkyMaterial_iuonh")
+
+[sub_resource type="Environment" id="Environment_l3cfh"]
+background_mode = 2
+sky = SubResource("Sky_k2fmo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3cfh"]
+size = Vector3(200, 0.1, 200)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_iuonh")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l3cfh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 15, 0)
+shadow_enabled = true
+
+[node name="Shop" parent="." instance=ExtResource("1_hyk8p")]
+
+[node name="DriveThrough" parent="." instance=ExtResource("4_l3cfh")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13, 0, -7.5)
+
+[node name="InvisibleFloor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleFloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_l3cfh")
+
+[node name="Greenhouse" parent="." instance=ExtResource("4_6q06x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -15)

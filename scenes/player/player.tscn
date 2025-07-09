@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhtxqj4al8f0v"]
+
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_75vfm"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_0owmy"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_75vfm"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="3_qek5x"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_5gtgg"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_h17s1"]
+
+[node name="Player" type="XROrigin3D"]
+current = true
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+current = true
+
+[node name="LeftHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHand" instance=ExtResource("1_75vfm")]
+
+[node name="MovementDirect" parent="LeftHand" instance=ExtResource("2_0owmy")]
+max_speed = 6.0
+
+[node name="FunctionPickup" parent="LeftHand" instance=ExtResource("3_75vfm")]
+
+[node name="RightHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHand" instance=ExtResource("3_qek5x")]
+
+[node name="MovementTurn" parent="RightHand" instance=ExtResource("4_5gtgg")]
+turn_mode = 2
+smooth_turn_speed = 3.0
+
+[node name="FunctionPickup" parent="RightHand" instance=ExtResource("3_75vfm")]
+
+[node name="PlayerBody" parent="." instance=ExtResource("5_h17s1")]

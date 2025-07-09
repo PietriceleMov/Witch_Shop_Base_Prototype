@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://fr44f36nge0l"]
+
+[ext_resource type="PackedScene" uid="uid://duc0f0jsx8i62" path="res://scenes/items/blooms/base_bloom.tscn" id="1_8s0t0"]
+[ext_resource type="Material" uid="uid://d1kwtoq1rwiam" path="res://assets/materials/type_c.tres" id="2_8s0t0"]
+
+[node name="BloomC" groups=["type_c_bloom"] instance=ExtResource("1_8s0t0")]
+
+[node name="MeshInstance3D" parent="." index="1"]
+material_override = ExtResource("2_8s0t0")

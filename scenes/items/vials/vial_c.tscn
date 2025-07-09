@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0yv0am535e2e"]
+
+[ext_resource type="Script" uid="uid://dfdjl0pjkpqre" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ssdsq"]
+[ext_resource type="Material" uid="uid://d1kwtoq1rwiam" path="res://assets/materials/type_c.tres" id="2_7fk20"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_2gusj"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_it1s4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cu0jl"]
+size = Vector3(0.201172, 0.301941, 0.201172)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ssdsq"]
+material = ExtResource("2_7fk20")
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d31c1"]
+albedo_color = Color(0.165656, 0.165656, 0.165656, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gp44d"]
+material = SubResource("StandardMaterial3D_d31c1")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgebf"]
+size = Vector3(0.201172, 0.301941, 0.201172)
+
+[node name="VialC" type="RigidBody3D" groups=["base_vial", "type_c_vial"]]
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+script = ExtResource("1_ssdsq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_cu0jl")
+
+[node name="Bottom" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_ssdsq")
+
+[node name="Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.55, 0, 0.25, 0)
+mesh = SubResource("BoxMesh_gp44d")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_xgebf")
+
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("3_2gusj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.100439)
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("4_it1s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.1)

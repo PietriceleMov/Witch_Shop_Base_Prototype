@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8c2u15j40pwe"]
+
+[ext_resource type="Script" uid="uid://b3sjvbfb4un64" path="res://scripts/characters/witch_customer.gd" id="1_rxkfc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fo3kw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u5kc4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxkfc"]
+
+[node name="WitchCustomer" type="CharacterBody3D"]
+script = ExtResource("1_rxkfc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fo3kw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_u5kc4")
+surface_material_override/0 = SubResource("StandardMaterial3D_rxkfc")
+
+[node name="Orders" type="Node3D" parent="."]
+
+[node name="TypeALabel" type="Label3D" parent="Orders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.5, 1)
+text = "3 A"
+font_size = 48
+
+[node name="TypeBLabel" type="Label3D" parent="Orders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.5, 0.35)
+text = "3 B"
+font_size = 48
+
+[node name="TypeCLabel" type="Label3D" parent="Orders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.5, -0.35)
+text = "3 C"
+font_size = 48
+
+[node name="TypeDLabel" type="Label3D" parent="Orders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.5, -1)
+text = "3 D"
+font_size = 48
