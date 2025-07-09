@@ -10,9 +10,9 @@ The base prototype for the witch shop VR game
 	
 ## Technologies
 The project is created with:
-* Godot 4.3
+* Godot 4.4.1
 
-![demo](/demo/Prepelix_Capture.PNG)
+![demo](/demo/Base_prototype.PNG)
 
 ## Status
 Project is:  _finished
