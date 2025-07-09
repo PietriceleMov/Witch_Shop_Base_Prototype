@@ -12,7 +12,7 @@ The base prototype for the witch shop VR game
 The project is created with:
 * Godot 4.4.1
 
-![demo](/demo/Base_prototype.PNG)
+![demo](/demo/Base_prototype.png)
 
 ## Status
 Project is:  _finished
